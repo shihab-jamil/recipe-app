@@ -3,7 +3,7 @@ import React from "react";
 function Card(props) {
   return (
     <div className="col-lg-3 col-md-4 col-sm-6 col-12 g-5">
-      <div className="card text-center">
+      <div className="card  text-center">
         <img
           src={props.recipe.recipe.image}
           className="card-img-top"

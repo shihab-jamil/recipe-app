@@ -4,6 +4,7 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import Card from "./components/Card";
 import axios from "axios";
 import "./App.css";
+import loading from "./loading.gif";
 
 function App() {
   const [input, setInput] = useState("");
@@ -26,6 +27,7 @@ function App() {
   const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`;
 
   const handleSearch = (event) => {
+    setDone(false);
     event.preventDefault();
     setQuery(input);
     setInput("");
@@ -60,6 +62,7 @@ function App() {
               className="input w-100 mb-2"
               value={input}
               onChange={(event) => setInput(event.target.value)}
+              placeholder="Search for recipes"
             />
           </div>
           <div className="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12 text-center">
@@ -77,7 +80,7 @@ function App() {
 
       <div className="row my-2 justify-content-center">
         {!done ? (
-          <p>Loading...</p>
+          <img src={loading} className="loading_image" />
         ) : (
           recipes.map((recipe, index) => (
             <Card key={index} recipe={recipe} id={makeId(6)} />

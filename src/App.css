@@ -4,9 +4,18 @@ body {
   width: 100%;
 }
 
-.App {
-  margin: 12px;
+.card {
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3) !important;
+  transition: transform 0.2s !important;
 }
 
-.input {
+.loading_image {
+  height: 100px;
+  width: 100px;
+  margin-top: 170px;
+}
+.card:hover {
+  transform: scale(
+    1.1
+  ) !important; /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
